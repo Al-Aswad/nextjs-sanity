@@ -21,14 +21,14 @@ export default function Home({ products, bannerData }) {
                 <p className='text-center'>Speaker there and many variant</p>
             </div>
 
-            <div className='flex justify-center'>
+            <div className='flex justify-center gap-4 px-10 flex-wrap mb-6'>
                 {products?.map(
-                    (product) => product.name
+                    (product) => <Product key={product._id} product={product} />
                 )}
             </div>
 
 
-            <FooterBanner />
+            <FooterBanner footerBanner={bannerData && bannerData[0]} />
 
         </div>
     )
